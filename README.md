@@ -1,4 +1,0 @@
-Incubator
-=========
-
-Project for BAH
