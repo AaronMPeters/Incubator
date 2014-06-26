@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BAH Intern Housing</title>
     <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="js/vendor/modernizr.js"></script>    
+    <script src="js/index.js"></script>
+
   </head>
   <body style='background-color:#66A3FF'>
     
@@ -16,15 +20,25 @@
     </div>
     <form>
       <div class="row">
-        <div class="large-9 large-centered columns">
-            <input type="text" placeholder="Enter your name" />
+        <div class="large-6 large-centered columns">
+            <input id='name' type="text" style='text-align:center; border-radius:15px; margin-bottom:10px;' placeholder="Enter your name" />
+            <input id='email' type="email" style='text-align:center; border-radius:15px; margin-bottom:10px;' placeholder="Email" />
+            <input id='password' type="password" style='text-align:center; border-radius:15px' onblur="leavePassword()" placeholder="Password" />
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="large-5 large-centered columns">
+          <div id='go_button' class='button expand radius' style='opacity: 0.1' onClick='go()'>Go</div>
+        </div>
+      </div>
+    </form>
     
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
+      var height = window.innerHeight / 4;
+      var newTop = height + "px";
+      $('#go_button').css('margin-top', newTop);
       $(document).foundation();
     </script>
   </body>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register profile</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="js/vendor/modernizr.js"></script>    
+    <script src="js/register.js"></script>
+
+  </head>
+
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="">Register Profile</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+      <li class="has-dropdown">
+        <a href="#">About Us</a>
+        <ul class="dropdown">
+          <li><a href="#">More Information</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+    </section>
+  </nav>
+  <body>
+    
+    <div class="row">
+      <div class="large-12 large-centered columns">
+        <h3 style='text-align:center' id="welcome">Alright, let's get some information about you</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 large-centered columns">
+        <h6 style='text-align:center'>We'll use it to get the perfect housing match for you.</h6>
+      </div>
+    </div>
+
+    <!--<form>
+      <div class="row" style="margin-top:25px;">
+        <div class="large-6 large-centered columns">
+            <input id='name' type="text" style='text-align:center; border-radius:15px; margin-bottom:10px;' placeholder="Name" />
+            <input id='email' type="text" style='text-align:center; border-radius:15px; margin-bottom:10px;' placeholder="Email" />
+            <input id='password' type="password" style='text-align:center; border-radius:15px' onblur="leavePassword()" placeholder="Password" />
+        </div>
+      </div>
+    </form>-->
+
+    <form id="registerForm">
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Name
+            <input type="text" name="name" placeholder="Name" />
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-4 columns">
+          <label>School
+            <input type="text" name="school" placeholder="School" />
+          </label>
+        </div>
+        <div class="large-4 columns">
+          <label>Major
+            <input type="text" name="major" placeholder="Major" />
+          </label>
+        </div>
+        <div class="large-4 columns">
+          <div class="row collapse">
+            <label>email</label>
+            <div class="small-9 columns">
+              <input type="text" name="email" placeholder="email" />
+            </div>
+            <div class="small-3 columns">
+              <span class="postfix"><select>
+              <option id="com">.com</option>
+              <option id="edu">.edu</option>
+              <option id="org">.org</option>
+              <option id="net">.net</option>
+            </select></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Select Location
+            <select>
+              <option value="dc">Washington, D.C.</option>
+              <option value="nova">Northern Virginia</option>
+              <option value="cmd">Central Maryland</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <label>Choose Your Favorite</label>
+          <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
+          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+        </div>
+        <div class="large-6 columns">
+          <label>Check these out</label>
+          <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+          <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Textarea Label
+            <textarea placeholder="small-12.columns"></textarea>
+          </label>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="large-5 large-centered columns">
+        <div id='go_button' class='button expand radius' onClick='register()'>Register</div>
+      </div>
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      var height = window.innerHeight / 4;
+      var newTop = height + "px";
+      $('#go_button').css('margin-top', newTop);
+      $(document).foundation();
+    </script>
+  </body>
+</html>
