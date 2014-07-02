@@ -37,24 +37,14 @@
     
     <div class="row">
       <div class="large-12 large-centered columns">
-        <h3 style='text-align:center' id="welcome">Alright, let's get some information about you</h3>
+        <h3 style='text-align:center' id="welcome">Alright, let's get some general information about you</h3>
       </div>
     </div>
     <div class="row">
       <div class="large-12 large-centered columns">
-        <h6 style='text-align:center'>We'll use it to get the perfect housing match for you.</h6>
+        <h6 style='text-align:center'>We'll use it to find you the perfect housing match.</h6>
       </div>
     </div>
-
-    <!--<form>
-      <div class="row" style="margin-top:25px;">
-        <div class="large-6 large-centered columns">
-            <input id='name' type="text" style='text-align:center; border-radius:15px; margin-bottom:10px;' placeholder="Name" />
-            <input id='email' type="text" style='text-align:center; border-radius:15px; margin-bottom:10px;' placeholder="Email" />
-            <input id='password' type="password" style='text-align:center; border-radius:15px' onblur="leavePassword()" placeholder="Password" />
-        </div>
-      </div>
-    </form>-->
 
     <form id="registerForm">
       <div class="row">
@@ -82,47 +72,122 @@
               <input type="text" name="email" placeholder="email" />
             </div>
             <div class="small-3 columns">
-              <span class="postfix"><select>
+              <span class="postfix"><select id="emailEndingOption">
               <option id="com">.com</option>
               <option id="edu">.edu</option>
               <option id="org">.org</option>
               <option id="net">.net</option>
+              <option disabled="true" id="other">.other</option>
             </select></span>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="large-12 columns">
-          <label>Select Location
-            <select>
-              <option value="dc">Washington, D.C.</option>
-              <option value="nova">Northern Virginia</option>
-              <option value="cmd">Central Maryland</option>
-              <option value="other">Other</option>
-            </select>
+
+       <div class="row">
+        <div class="large-6 columns">
+
+          <label>Select Office Location
+            <ul class="tabs" data-tab >
+              <li class="tab-title active"><a href="#office-panel-dc">D.C.</a></li>
+              <li class="tab-title"><a href="#office-panel-va">Virginia</a></li>
+              <li class="tab-title"><a href="#office-panel-md">Maryland</a></li>
+            </ul>
+            <div class="tabs-content">
+              <div class="content active" id="office-panel-dc">
+                <select>
+                  <option value="901-S">901 15th Street NW</option>
+                  <option value="20-M-S">20 M Street, SE</option>
+                </select>
+              </div>
+              <div class="content" id="office-panel-va">
+                <select>
+                  <option value="mclean">McLean</option>
+                  <option value="one-dulles">One Dulles</option>
+                  <option value="herndon">Herndon Parkway</option>
+                  <option value="one-dulles">Chantilly</option>                  
+                  <option value="arlington">Arlington</option>
+                  <option value="falls-church">Falls Church</option>
+                </select>
+              </div>
+              <div class="content" id="office-panel-md">
+                <select>
+                  <option value="CMD">Anapolis Junction (Central MD)</option>
+                  <option value="Rockville">Rockville</option>
+                <select>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="large-6 columns">
+
+          <label>What is your preferred housing style
+            <ul class="tabs" data-tab >
+              <li class="tab-title active"><a href="#housing-panel-apartment">Apartment</a></li>
+              <li class="tab-title"><a href="#housing-panel-room">Room in House</a></li>
+              <li class="tab-title"><a href="#housing-panel-hotel">Hotel</a></li>
+            </ul>
+            <div class="tabs-content">
+              <div class="content active" id="housing-panel-apartment">
+                <select>
+                  <option value="1br1pe">1 bedroom - 1 person</option>
+                  <option value="1br2pe">1 bedroom - 2 people</option>
+                  <option value="2br2pe">2 bedrooms - 2 people</option>
+                  <option value="2be4pe">2 bedrooms - 4 people</option>              
+                  <option value="3be3pe">3 bedrooms - 3 people</option>                           
+                  <option value="3be6pe">3 bedrooms - 6 people</option>
+                </select>
+              </div>
+              <div class="content" id="housing-panel-room">
+                <select>
+                  <option value="employee">Room in a Booz Allen employee's house (If available)</option>
+                  <option value="random">Room in any available house</option>
+                </select>
+              </div>
+              <div class="content" id="housing-panel-hotel">
+                <select>
+                  <option value="exec">Executive suite room</option>
+                  <option value="norm">Traditional hotel room</option>
+                <select>
+              </div>
+            </div>
           </label>
         </div>
       </div>
+
       <div class="row">
         <div class="large-6 columns">
-          <label>Choose Your Favorite</label>
-          <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
-          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+          <div class="row collapse">
+            <label>Min Rent</label>
+            <div class="large-3 columns">
+              <span class="prefix">$</span>
+            </div>
+            <div class="large-9 columns">              
+              <input type="number" name="school" min=0 max=1950 step=50 value=200 />
+            </div>
+          </div>
         </div>
         <div class="large-6 columns">
-          <label>Check these out</label>
-          <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-          <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+          <div class="row collapse">
+            <label>Max Rent</label>
+            <div class="large-3 columns">
+              <span class="prefix">$</span>
+            </div>
+            <div class="large-9 columns">              
+              <input type="number" name="school" min=50 max=2000 step=50 value=1000 />
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="large-12 columns">
-          <label>Textarea Label
-            <textarea placeholder="small-12.columns"></textarea>
-          </label>
+
+      <div clss="row">
+        <div class="large-6 large-centered columns" style='text-align:center;'>
+          <p>Average price based on your selection:</p>
+          <p><b><h1 style='color:green'>$2000</h1></b></p>
         </div>
       </div>
+    </div>
+
     </form>
 
     <div class="row">
@@ -134,9 +199,6 @@
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
-      var height = window.innerHeight / 4;
-      var newTop = height + "px";
-      $('#go_button').css('margin-top', newTop);
       $(document).foundation();
     </script>
   </body>
